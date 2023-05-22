@@ -6,6 +6,7 @@ from dash import html
 import plotly.graph_objs as go
 
 prediction_df = pd.read_csv('current_prediction.csv', parse_dates=['time'])
+# prediction_df = pd.read_csv('/home/reforecast/forecast-webapp/current_prediction.csv', parse_dates=['time'])
 
 time_axis = prediction_df['time']
 y_biomass = np.asarray(prediction_df['biomass'])
@@ -90,13 +91,15 @@ fig.update_layout(xaxis_title="Time",
                   yaxis_title="[MWh]", 
                   title="Forecast Electricity generation and consumption in Germany",
                   plot_bgcolor='rgba(255, 255, 255, 1)', # set background color with lower alpha value
-                  paper_bgcolor='rgba(255, 255, 255, 1)'            
+                  paper_bgcolor='rgba(255, 255, 255, 1)',
+                  legend=dict(orientation="h", yanchor="top", y=1.1, xanchor="center", x=0.5)          
 )
 
 # create the layout of the app
 app.layout = html.Div(children=[
-    dcc.Graph(id='forecast-graph', figure=fig),
-])
+    dcc.Graph(id='forecast-graph', figure=fig)
+    ]
+)
 
 if __name__ == '__main__':
     app.run_server(debug=True, use_reloader=False)
