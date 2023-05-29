@@ -1,8 +1,5 @@
 import numpy as np
 import pandas as pd
-import dash
-from dash import dcc
-from dash import html
 import plotly.graph_objs as go
 
 def plot_prediction():

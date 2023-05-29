@@ -1,10 +1,5 @@
-import numpy as np
 import pandas as pd
-import geopandas as gpd
 import json
-import dash
-from dash import dcc
-from dash import html
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
