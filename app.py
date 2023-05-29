@@ -1,7 +1,6 @@
 import dash
 from dash import dcc
 from dash import html
-
 from plot_prediction import plot_prediction
 from plot_map import plot_map
 
