@@ -31,6 +31,7 @@ def plot_map():
             zmin = 0,
             zmax = 20000,
             name = 'Wind Power',
+            hoverinfo='none'
         ),
         row=1,
         col=1
@@ -46,6 +47,7 @@ def plot_map():
             zmin = 0,
             zmax = 20000,
             name = 'Solar Power',
+            hoverinfo='none'
         ),
         row=1,
         col=2
@@ -104,6 +106,7 @@ def plot_map():
                     zmin = 0,
                     zmax = 20000,
                     name = 'Wind Power',
+                    hoverinfo='none'
                 ),
                 go.Choropleth(
                     geojson=json.loads(germany_solar_geojson),
@@ -114,6 +117,7 @@ def plot_map():
                     zmin = 0,
                     zmax = 20000,
                     name = 'Solar Power',
+                    hoverinfo='none'
                 )
             ],
             name=hour
