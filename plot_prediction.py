@@ -16,8 +16,8 @@ def plot_prediction():
     y_solar = np.asarray(prediction_df['solar'])
     y_demand = np.asarray(prediction_df['demand'])
     y_residual = y_demand - (y_biomass + y_hydropower + y_wind + y_solar)
-    y_emissions_factor = 0.875402*(y_residual/y_demand)*1000 #in g/kWh
-    y_emissions_factor[y_emissions_factor < 0] = 0
+    # y_emissions_factor = 0.875402*(y_residual/y_demand)*1000 #in g/kWh
+    # y_emissions_factor[y_emissions_factor < 0] = 0
 
     color_biomass = (80.988, 178.985, 80.988, 0.8)
     color_hydropower = (166.005, 225.981, 255, 0.8)
@@ -87,14 +87,6 @@ def plot_prediction():
         line=dict(width=1.25, color=f'rgb{(color_demand)}'),
         name='Demand',
         hovertemplate='%{x}<br>%{y:.2f} MWh'
-    ))
-    fig1.add_trace(go.Scatter(
-        x=time_axis, y=y_emissions_factor,
-        hoverinfo='x+y',
-        mode='lines',
-        line=dict(width=1.5, color=f'rgb{(color_emissions_factor)}'),
-        name='Emissions Factor',
-        hovertemplate='%{x}<br>%{y:.2f} g/kWh'
     ))
 
     fig1.update_xaxes(showgrid=True, gridwidth=0.2, gridcolor='rgba(0, 0, 0, 0.3)')
