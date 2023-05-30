@@ -91,7 +91,7 @@ def plot_prediction():
 
     fig1.update_layout(xaxis_title="Time", 
                     yaxis_title="[MWh]", 
-                    title="Forecast Electricity generation and consumption in Germany",
+                    title="German electricity generation and consumption forecast",
                     plot_bgcolor='rgba(255, 255, 255, 1)', # set background color with lower alpha value
                     paper_bgcolor='rgba(255, 255, 255, 1)',
                     legend=dict(orientation="h", yanchor="top", y=1.1, xanchor="center", x=0.5)          

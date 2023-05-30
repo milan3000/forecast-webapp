@@ -50,8 +50,8 @@ def plot_map():
 
     # Update layout
     fig2.update_layout(
-        title_text='Spatiotemporal Renewable Energy Forecast Visualisation',
-        height = 600,  # px
+        title_text='Spatiotemporal wind and solar power forecast visualisation',
+        height = 700,  # px
         showlegend=False,
         geo1=dict(
             showframe=False,
