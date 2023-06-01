@@ -7,10 +7,10 @@ import pytz
 
 germany_regions_wind_df = pd.read_csv('map_data/germany_regions_wind.csv', dtype = {'plz2': str})
 germany_regions_solar_df = pd.read_csv('map_data/germany_regions_solar.csv', dtype = {'plz2': str})
-germany_regions_wind_df.set_index('plz2', inplace=True)
-germany_regions_solar_df.set_index('plz2', inplace=True)
 # germany_regions_wind_df = pd.read_csv('/home/reforecast/forecast-webapp/map_data/germany_regions_wind.csv', dtype = {'plz2': str})
 # germany_regions_solar_df = pd.read_csv('/home/reforecast/forecast-webapp/map_data/germany_regions_solar.csv', dtype = {'plz2': str})
+germany_regions_wind_df.set_index('plz2', inplace=True)
+germany_regions_solar_df.set_index('plz2', inplace=True)
 
 start_date = str(dt.datetime.now(pytz.timezone('Europe/Berlin')).date()+ dt.timedelta(days=1))
 end_date = str(dt.datetime.now(pytz.timezone('Europe/Berlin')).date() + dt.timedelta(days=7))
@@ -57,5 +57,3 @@ solar_prediction_df['solar_power_output'] = solar_prediction_df['direct_radiatio
 solar_prediction_df['plz2'] = solar_prediction_df['plz2'].astype('str')
 solar_prediction_df.to_csv('map_data/current_solar_prediction_map.csv', index=False)
 # solar_prediction_df.to_csv('/home/reforecast/forecast-webapp/map_data/current_solar_prediction_map.csv', index=False)
-
-print(wind_prediction_df)
