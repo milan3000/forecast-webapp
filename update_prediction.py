@@ -69,5 +69,3 @@ prediction_df.to_csv(f'uncertainty_estimation/predictions/{start_date}.csv')
 
 prediction_df.to_csv('current_prediction.csv')
 # prediction_df.to_csv('/home/reforecast/forecast-webapp/current_prediction.csv')
-
-print(prediction_df)
