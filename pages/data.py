@@ -1,13 +1,16 @@
 import dash
-from dash import html, dcc
+from dash import html, Output, Input
+import pandas as pd
+import json
+
+
+def load_json():
+    df = pd.read_csv('current_prediction.csv')
+    json_data = df.to_dict(orient='records')
+    return json.dumps(json_data)
 
 dash.register_page(__name__)
 
 layout = html.Div(children=[
-    html.H1(children='This is our data page'),
-
-    html.Div(children='''
-        This is where the data will be returned.
-    '''),
-
+    html.Div(load_json())
 ])
